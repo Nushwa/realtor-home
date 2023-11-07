@@ -2,28 +2,31 @@ import React from "react";
 import { Carousel } from "react-carousel3";
 
 const style = {
-  width: 297,
-  height: 296,
+  width: "30%", // Make the carousel responsive
+  height: "auto", // Make the carousel responsive
 };
+
+const bannerContainerStyle = {
+  width: "100%",
+  height: "400px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  background: "linear-gradient(to bottom, #7a7b7e 0%, #a8a8a9 100%)",
+};
+
 
 const Banner = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        background: "linear-gradient(to bottom, #7a7b7e 0%, #a8a8a9 100%)",
-        paddingTop: "3%"
-      }}
-    >
+    <div style={bannerContainerStyle}>
       <Carousel
-        height={400}
-        width={980}
+        height="60%"
+        width="80%"
         yOrigin={42}
         yRadius={48}
         autoPlay={true}
       >
-        <div key={1} style={style} >
+        <div key={1} style={style}>
           <img
             alt=""
             src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1896&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
