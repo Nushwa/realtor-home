@@ -1,0 +1,24 @@
+/* Default styles for smaller screens */
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Adjust styles for screens with a width of 768px or more */
+  @media (min-width: 768px) {
+    .carousel-item img {
+        width: 267px;
+        height: 120px;
+        background: linear-gradient(to bottom, #7a7b7e 0%, #a8a8a9 100%)
+    }
+  }
+  
+  /* Adjust styles for screens with a width of 1200px or more */
+  @media (min-width: 1200px) {
+    .carousel-item img {
+      
+      width: 267px;
+      height: 120px;
+    }
+  }
+  
