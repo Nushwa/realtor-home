@@ -1,13 +1,31 @@
-.navbar-brand{
-    padding: 2%;
+.navbar {
+  font-family: "Agbalumo";
 }
-.navbar-nav{
-    margin: 0.5rem;
-    justify-content: end;
-    padding: 0.7rem;
-    
+.navbar-brand {
+  padding: 2%;
+  font-size: xx-large;
 }
-.nav-item{
-    font-weight: 500;
-    font-size: large;
+.navbar-nav {
+  margin: 0.5rem;
+  justify-content: end;
+  padding: 0.7rem;
+}
+.nav-item {
+  font-weight: 100;
+  font-size: 1.4rem;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px; /* Add margin between image and text */
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-family: "Agbalumo";
 }
