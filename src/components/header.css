@@ -2,17 +2,18 @@
   font-family: "Agbalumo";
 }
 .navbar-brand {
-  padding: 2%;
+  padding: 2rem;
   font-size: xx-large;
 }
 .navbar-nav {
-  margin: 0.5rem;
+  margin: 2rem;
   justify-content: end;
-  padding: 0.7rem;
+  padding: 0.4rem;
 }
 .nav-item {
+  margin-bottom: 1.2rem;
   font-weight: 100;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 }
 .logo-container {
   display: flex;
@@ -20,12 +21,12 @@
 }
 
 .logo {
-  width: 50px; /* Adjust the width as needed */
+  width: 40px;
   height: auto;
-  margin-right: 10px; /* Add margin between image and text */
+  margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: "Agbalumo";
 }
