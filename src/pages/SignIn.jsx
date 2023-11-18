@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import "./styles/signin.css";
+import "../assets/styles/signin.css";
+import OAuth from "../components/Auth/OAuth";
 
-export default function SignIn() {
+const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -73,13 +74,16 @@ export default function SignIn() {
             <button className="submit-btn" type="submit">
               Sign in
             </button>
-            <div className="flex items-center my-4 before:border-t before:flex-1 before:border-gray-300 after:border-t after:flex-1 after:border-gray-300">
-              <p className="text-center font-semibold mx-4">OR</p>
+            <div className="or-text">
+              <p className="p-or ">OR</p>
             </div>
-            {/* <OAuth /> */}
+
+            <OAuth />
           </form>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default SignIn;

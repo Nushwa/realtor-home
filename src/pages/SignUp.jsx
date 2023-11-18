@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import "./styles/signin.css";
+import { Link, useNavigate } from "react-router-dom";
+import "../assets/styles/signin.css";
+import OAuth from "../components/Auth/OAuth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { db } from "../firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,12 +20,42 @@ export default function SignUp() {
     password: "",
   });
   const { name, email, password } = formData;
+  const navigate = useNavigate();
 
   function onChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
+  }
+
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+
+      const user = userCredential.user;
+
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      // toast.success("Sign up was successfull");
+      navigate("/sign-in");
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
   }
 
   return (
@@ -30,7 +69,7 @@ export default function SignUp() {
           />
         </div>
         <div className="signin-container">
-          <form className="signin-form">
+          <form className="signin-form" onSubmit={onSubmit}>
             <input
               type="name"
               id="name"
@@ -83,10 +122,11 @@ export default function SignUp() {
             <button className="submit-btn" type="submit">
               Sign up
             </button>
-            <div className="flex items-center my-4 before:border-t before:flex-1 before:border-gray-300 after:border-t after:flex-1 after:border-gray-300">
-              <p className="text-center font-semibold mx-4">OR</p>
+            <div className="or-text">
+              <p className="p-or ">OR</p>
             </div>
-            {/* <OAuth /> */}
+
+            <OAuth />
           </form>
         </div>
       </div>

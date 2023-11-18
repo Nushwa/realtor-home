@@ -5,13 +5,13 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./styles/banner.css";
-import img1 from "../images/img1.jpeg";
-import img2 from "../images/img2.jpeg";
-import img3 from "../images/img3.jpeg";
-import img4 from "../images/img4.jpeg";
-import img5 from "../images/img5.jpeg";
-import img6 from "../images/img6.jpeg";
+import "../../assets/styles/banner.css";
+import img1 from "../../assets/images/img1.jpeg";
+import img2 from "../../assets/images/img2.jpeg";
+import img3 from "../../assets/images/img3.jpeg";
+import img4 from "../../assets/images/img4.jpeg";
+import img5 from "../../assets/images/img5.jpeg";
+import img6 from "../../assets/images/img6.jpeg";
 
 const imageData = [
   { title: "Title 1", description: "Description for Title 1", image: img1 },

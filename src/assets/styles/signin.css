@@ -231,3 +231,22 @@
 .forgot-password-link:hover {
   color: #1e40af;
 }
+
+.or-text {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.or-text::before,
+.or-text::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #a9a9a9;
+}
+
+.p-or {
+  text-align: center;
+  font-weight: 600;
+  margin: 0 1rem;
+}
