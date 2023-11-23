@@ -1,14 +1,26 @@
 import React, { useState } from "react";
-import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "../assets/styles/signin.css";
 import OAuth from "../components/Auth/OAuth";
+import { toast } from "react-toastify";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
 
   function onChange(e) {
     setEmail(e.target.value);
+  }
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Email sent successfully");
+    } catch (error) {
+      toast.error("Can not send the email");
+    }
   }
 
   return (
@@ -22,7 +34,7 @@ export default function ForgotPassword() {
           />
         </div>
         <div className="signin-container">
-          <form className="signin-form">
+          <form className="signin-form" onSubmit={onSubmit}>
             <input
               type="email"
               id="email"
