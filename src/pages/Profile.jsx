@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth, updatePassword, updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 import { doc, updateDoc } from "firebase/firestore";
 import "../assets/styles/profile.css";
@@ -54,43 +54,53 @@ const Profile = () => {
 
   return (
     <div className="profile-container ">
-      <h1 className="pf-heading text-3xl font-semibold text-center my-7">
-        Profile
-      </h1>
-      <form className="pf-form flex flex-col gap-4">
-        <input
+      <div className="box">
+        <h1 className="pf-heading ">
+          Profile
+        </h1>
+        <form className="pf-form ">
+          <input
+            type="text"
+            id="name"
+            value={name}
+            disabled={!changeDetail}
+            onChange={onChange}
+            className={`profile-input ${changeDetail && "edit-change"}`}
+          />
+          {/* <input
           type="text"
-          id="name"
-          value={name}
+          id="password"
+          value={password}
           disabled={!changeDetail}
           onChange={onChange}
           className={`profile-input ${changeDetail && "edit-change"}`}
-        />
-        <input
-          type="email"
-          value={email}
-          id="email"
-          disabled
-          className="profile-input border p-3 rounded-lg"
-        />
+        /> */}
+          <input
+            type="email"
+            value={email}
+            id="email"
+            disabled
+            className="profile-input "
+          />
 
-        <span
-          onClick={() => {
-            changeDetail && onSubmit();
-            setChangeDetail((prevState) => !prevState);
-          }}
-          className="pf-update-btn"
-        >
-          {changeDetail ? "Apply changes" : "Edit"}
-        </span>
-      </form>
-      <div className="pf-op flex justify-between mt-5">
-        <span
-          onClick={onLogout}
-          className="pf-signout-btn text-red-700 cursor-pointer"
-        >
-          Sign Out
-        </span>
+          <span
+            onClick={() => {
+              changeDetail && onSubmit();
+              setChangeDetail((prevState) => !prevState);
+            }}
+            className="pf-update-btn"
+          >
+            {changeDetail ? "Apply changes" : "Edit"}
+          </span>
+        </form>
+        <div className="pf-op ">
+          <span
+            onClick={onLogout}
+            className="pf-signout-btn"
+          >
+            Sign Out
+          </span>
+        </div>
       </div>
     </div>
   );

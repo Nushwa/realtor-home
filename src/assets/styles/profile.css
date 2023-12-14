@@ -1,117 +1,10 @@
-.box {
-  background: linear-gradient(45deg, #878787 30%, #c1c1c1 90%);
-  border-radius: 5px;
-  color: white;
-  padding: 0px;
-  height: 70%;
-  width: 55%;
-  box-shadow: 0 3px 5px 2px rgba(69, 69, 69, 0.3);
-  text-align: center;
-  transition: 0.3s;
-  margin: 0.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .box:hover {
-  background: linear-gradient(45deg, #848484 30%, rgb(171, 171, 171) 90%);
-  border-radius: 5px;
-  color: white;
-  height: 250px;
-  width: 250px;
-  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
-} */
-
-.profile-heading {
-  margin: 0.5rem;
-  color: black;
-  font-weight: 700;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.prof-container {
-  margin: 10px;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Adjust the height of the container */
-}
-
-.pf-input {
-  margin-bottom: 10px;
-  width: 66%;
-  padding: 8px;
-  font-size: 16px;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: ease-in-out;
-}
-.profile-options {
-  display: flex;
-  flex-direction: column; /* Arrange elements in a column */
-  font-size: 14px;
-  margin-bottom: 20px;
-  align-items: center;
-}
-
-.profile-options > div {
-  display: flex;
-  flex-direction: column; /* Arrange elements in a column */
-  align-items: flex-start; /* Align items to the start */
-  gap: 10px; /* Spacing between elements */
-}
-
-.pf-edit {
-  color: #ff0000; /* Adjust the color as needed */
-  transition: ease-in-out 0.2s;
-  cursor: pointer;
-}
-
-.pf-edit:hover {
-  color: #ff3333; /* Adjust the hover color as needed */
-}
-
-.signout-btn {
-  width: 100%;
-  height: 3rem;
-  background-color: rgb(26, 26, 128);
-  color: white;
-  padding: 0.75rem 1.75rem;
-  font-size: small;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  border: none;
-}
-
-.signout-btn:hover {
-  background-color: rgb(29 78 216 / 100%);
-}
-
-.signout-btn:active {
-  background-color: rgb(30 64 175 / 100%);
-}
-
-@media (max-width: 1088px) {
-  .signout-btn {
-    font-size: 0.8rem;
-    padding: 0.75rem 1.75rem;
-    width: 160px;
-  }
-}
 
 /* ------------------------ */
 
 .profile-container {
   /* background: linear-gradient(45deg, #878787 30%, #c1c1c1 90%); */
   padding: 0.75rem;
-  max-width: 32rem;
+  max-width: 50rem;
   margin: auto;
 }
 .pf-heading {
@@ -126,7 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-top: 7rem;
+  margin-top: 3rem;
 }
 
 .profile-input {
@@ -134,10 +27,13 @@
   border-radius: 0.5rem;
   font-size: medium;
   width: auto;
+  color: black;
+  margin: 1rem;
+  
 }
 
 .pf-update-btn {
-  background-color: rgb(91, 94, 96);
+  background-color: rgb(179, 179, 179);
   color: white;
   border-radius: 0.5rem;
   padding: 0.75rem;
@@ -146,6 +42,7 @@
   align-content: center;
   justify-content: center;
   cursor: pointer;
+  margin: 1rem;
 }
 .pf-update:hover {
   opacity: 0.95;
@@ -164,7 +61,34 @@
   margin-top: 1.25rem;
 }
 .pf-signout-btn {
-  color: red;
+
+  background-color: rgb(132, 5, 5);
+  color: rgb(222, 222, 222);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 1.6rem;
+  margin: 1rem;
 }
+
+
+.box {
+  background: linear-gradient(45deg, #828282 30%, #b9b9b9 90%);
+  border-radius: 5px;
+  color: white;
+  padding: 20px;
+  height: 40rem;
+  width: 45rem;
+  box-shadow: 0 3px 5px 2px rgba(107, 107, 107, 0.3);
+  text-align: center;
+  transition: 0.3s;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
